@@ -1,0 +1,82 @@
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>قرآن کریم با ترجمه فارسی</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>قرآن کریم</h1>
+            <h2>با ترجمه شیعی و صوت قاریان</h2>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="جستجو در قرآن کریم...">
+                    <button id="searchButton">جستجو</button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- تنظیمات صوتی در بالای صفحه اضافه خواهد شد -->
+
+        <div class="filter-info">
+            <div class="current-verse-box">
+                <div class="current-verse-details">لطفاً آیه‌ای را انتخاب کنید</div>
+            </div>
+        </div>
+
+        <div class="content-container">
+            <div class="sidebar">
+                <h3>فهرست سوره‌ها</h3>
+                <ul id="surahList">
+                    <!-- سوره‌ها با جاوااسکریپت اضافه می‌شوند -->
+                </ul>
+            </div>
+            
+            <div class="quran-content">
+                <div id="quranDisplay">
+                    <div class="welcome-message">
+                        <h2>به قرآن کریم خوش آمدید</h2>
+                        <p>از منوی سمت راست یک سوره را انتخاب کنید یا در بالای صفحه جستجو نمایید.</p>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <button id="prevPage" disabled>صفحه قبل</button>
+                    <span id="pageInfo">صفحه 0 از 0</span>
+                    <button id="nextPage" disabled>صفحه بعد</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>تمامی حقوق محفوظ است | قرآن کریم با ترجمه فارسی</p>
+        </footer>
+    </div>
+
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>در حال بارگذاری قرآن کریم...</p>
+    </div>
+
+    <div id="audioPlayer" class="currently-playing" style="display: none;">
+        <div class="now-playing-info">
+            <div id="currentVerseInfo">در حال پخش: سوره 1 - آیه 1</div>
+        </div>
+        <div class="now-playing-controls">
+            <button id="stopAudio" class="audio-button">توقف</button>
+            <button id="nextAyah" class="audio-button">آیه بعدی</button>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "quran-data": "./quran-data.js",
+            "config": "./config.js"
+        }
+    }
+    </script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
